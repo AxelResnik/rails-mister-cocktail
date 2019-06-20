@@ -4,7 +4,7 @@
 <%= f.input :description %>
 <% if @cocktail.id.nil? %>
 <%= f.input :photo %>
-<%= f.input :photo_cache, as: :hidden %>
+<%= f.input :photo_cache, as: :hidden, class: 'btn btn-dark' %>
 <% end %>
 <%= f.button :submit, class: 'btn btn-dark' %>
 <% end %>
