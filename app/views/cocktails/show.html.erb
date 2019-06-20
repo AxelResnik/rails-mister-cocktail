@@ -10,16 +10,17 @@
   <h5><%= @cocktail.description %></h5>
   <br>
   <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: 'btn btn-dark' %>
+    <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure" }, class: 'btn btn-dark' %>
 </div>
 
 <div>
   <h3>Ingredients</h3>
   <% @cocktail.doses.each do |dose| %>
-  <p>
+  <h5>
     <strong><%= dose.ingredient.name %></strong> -
     <%= dose.description %>
     <%= link_to '(delete)', dose_path(dose), method: :delete, data: { confirm: "Are you sure" }, class: 'text-dark' %>
-  </p>
+  </h5>
 <% end %>
 
 <br>
