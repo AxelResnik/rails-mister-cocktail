@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :find_cocktail, only: [:show, :destroy]
+  before_action :find_cocktail, only: [:show, :destroy, :update, :edit]
 
   def index
     @cocktails = Cocktail.all
@@ -20,6 +20,16 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @cocktail.update(cocktail_params)
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @cocktail.destroy
     redirect_to cocktails_path, notice: 'Dose sucessfuly deleted'
@@ -32,6 +42,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo, :description)
   end
 end

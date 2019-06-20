@@ -1,7 +1,10 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "../cocktails", class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon align-items-center sticky-top">
+
+    <%= link_to cocktails_path, class: "navbar-brand" do %>
     <%= image_tag "https://previews.123rf.com/images/polyudova/polyudova1704/polyudova170400064/77028714-alcoholic-cocktail-hand-drawn-vector-illustration-vintage-cocktail-icon-with-ice-and-leaves-of-mint-.jpg" %>
-  <% end %>
+    <% end %>
+
+    <h5 class="pt-1">Cuervo's Cocktails</h5>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +14,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "New cocktail", "../cocktails/new", class: "nav-link" %>
+        <%= link_to "New cocktail", new_cocktail_path, class: "nav-link" %>
       </li>
     </ul>
   </div>

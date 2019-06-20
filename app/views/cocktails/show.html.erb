@@ -1,12 +1,29 @@
-<h1><%= @cocktail.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.photo %>);">
+  <div class="container">
+    <h1><strong><%= @cocktail.name %></strong></h1>
+  </div>
+</div>
 
-<% @cocktail.doses.each do |dose| %>
-<h3> <%= dose.description %> of
-<%= dose.ingredient.name %> </h3>
-<%= link_to 'delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure" } %>
+<div class="row justify-content-around my-3">
+<div>
+  <h3>Description</h3>
+  <p><%= @cocktail.description %></p>
+  <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: 'btn btn-dark' %>
+</div>
+
+<div>
+  <h3>Ingredients</h3>
+  <% @cocktail.doses.each do |dose| %>
+  <p>
+    <strong><%= dose.ingredient.name %></strong> -
+    <%= dose.description %>
+    <%= link_to '(delete)', dose_path(dose), method: :delete, data: { confirm: "Are you sure" } %>
+  </p>
 <% end %>
 
 <br>
-<%= link_to 'create a new dose', new_cocktail_dose_path(@cocktail) %>
+<%= link_to 'Add an Igredient', new_cocktail_dose_path(@cocktail), class: 'btn btn-dark' %>
+</div>
+</div>
 <br>
-<%= link_to 'back', cocktails_path %>
+<%= link_to 'back', cocktails_path, class: 'btn btn-secondary ml-3' %>
