@@ -14,3 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// const typed = new Typed('.element', {
+//   strings: ["Create your own cocktail menu.", "Share it with friends.", "Have a good time!."],
+//   typeSpeed: 50
+// });
