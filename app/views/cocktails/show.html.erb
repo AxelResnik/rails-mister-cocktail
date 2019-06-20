@@ -17,7 +17,7 @@
   <p>
     <strong><%= dose.ingredient.name %></strong> -
     <%= dose.description %>
-    <%= link_to '(delete)', dose_path(dose), method: :delete, data: { confirm: "Are you sure" } %>
+    <%= link_to '(delete)', dose_path(dose), method: :delete, data: { confirm: "Are you sure" }, class: 'text-dark' %>
   </p>
 <% end %>
 
