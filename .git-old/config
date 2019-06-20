@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:AxelResnik/rails-mister-cocktail.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[submodule "spec"]
+	url = https://github.com/lewagon/fullstack-challenges-04-Rails-mister-cocktail-specs.git
+	active = true
+[remote "heroku"]
+	url = https://git.heroku.com/cuervo-mister-cocktail.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*
