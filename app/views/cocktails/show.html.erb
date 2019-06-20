@@ -5,9 +5,10 @@
 </div>
 
 <div class="row justify-content-around my-3">
-<div>
+<div class="">
   <h3>Description</h3>
-  <p><%= @cocktail.description %></p>
+  <h5><%= @cocktail.description %></h5>
+  <br>
   <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: 'btn btn-dark' %>
 </div>
 
@@ -26,4 +27,4 @@
 </div>
 </div>
 <br>
-<%= link_to 'back', cocktails_path, class: 'btn btn-secondary ml-3' %>
+<%= link_to 'Back', cocktails_path, class: 'btn btn-secondary ml-3' %>
